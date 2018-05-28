@@ -21,13 +21,13 @@ func init() {
 type Userinfo struct {
 	Id     int `PK` //如果表的主键不是id，那么需要加上pk注释，显式的说这个字段是主键
 	Username    string
-	Departname  string
+	DepartName  string
 	Created     time.Time
 }
 
 func main() {
 	o := orm.NewOrm()
-	u := Userinfo{Username:"rose",Departname:"研发",Created:time.Now()}
+	u := Userinfo{Username:"rose",DepartName:"研发",Created:time.Now()}
 	id, err:=o.Insert(&u)
 	if err != nil {
 		fmt.Println(err.Error())
